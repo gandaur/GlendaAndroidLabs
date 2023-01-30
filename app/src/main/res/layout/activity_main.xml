@@ -7,20 +7,20 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
         android:text="click me"
         />
+
 
 
     <TextView android:id="@+id/textHelloWorld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_message"
-        android:textSize="48sp"
          />
 
 
@@ -37,34 +37,46 @@
         android:autofillHints="" />
 
 
-    <ImageButton
-        android:src="@drawable/logoalgonquin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id ="@+id/myimage"/>
 
     <Switch android:id ="@+id/mySwitch"
-        android:layout_width="match_parent"
+        android:layout_width="282dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Yes"/>
+        android:text="Do you drink coffee?">
+
+    </Switch>
+
+
+
 
     <RadioButton android:id ="@+id/myButton"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Yes"/>
+        android:text="Do you drink coffee?">
 
-   <CheckBox android:id ="@+id/myBox"
-        android:layout_width="wrap_content"
+    </RadioButton>
+
+    <CheckBox android:id ="@+id/myBox"
+        android:layout_width="283dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Yes"/>
+        android:text="Do you drink coffee?">
+
+    </CheckBox>
+
+    <ImageButton
+        android:id="@+id/image"
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoalgonquin">
+
+    </ImageButton>
+
+
     <ImageView
-        android:src="@drawable/logoalgonquin"
+        android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id ="@+id/image"/>
+        android:src="@drawable/logoalgonquin"/>
 
 
 </LinearLayout>

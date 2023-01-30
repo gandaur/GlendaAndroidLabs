@@ -7,6 +7,7 @@ public class MainActivityViewModel extends ViewModel{
     //public String editTextContents;
 
     public MutableLiveData<String> editTextContents = new MutableLiveData<>();
+    public MutableLiveData<Boolean> isSelected = new MutableLiveData<>(false);
 
  // public MutableLiveData<Boolean> options = new MutableLiveData<>();
 
