@@ -1,29 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="click me"
+        />
 
-    <TextView
+
+    <TextView android:id="@+id/textHelloWorld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_message"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="48sp"
+         />
 
-    <Button
+
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="@string/button_message"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/write_something_here"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints"
+        android:autofillHints="" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:src="@drawable/logoalgonquin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id ="@+id/myimage"/>
+
+    <Switch android:id ="@+id/mySwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="Yes"/>
+
+    <RadioButton android:id ="@+id/myButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="Yes"/>
+
+   <CheckBox android:id ="@+id/myBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="Yes"/>
+    <ImageView
+        android:src="@drawable/logoalgonquin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id ="@+id/image"/>
+
+
+</LinearLayout>
