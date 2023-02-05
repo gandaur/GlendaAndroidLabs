@@ -3,4 +3,8 @@
     <string name="app_name">Glenda\'s Android Labs</string>
     <string name="hello_message">Hola Mundo!</string>
     <string name="button_message">Soy un boton</string>
+    <string name="button_1">Boton 1</string>
+    <string name="button_2">Boton 2</string>
+    <string name="button_3">Boton 3</string>
+    <string name="Spin_flag">Girar Bandera</string>
 </resources>
