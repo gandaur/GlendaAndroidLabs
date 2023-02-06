@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp"
     tools:context=".MainActivity">
 
     <Button
@@ -13,6 +17,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="@string/button_1"
+        android:nextFocusUp="@id/button1"
+        android:nextFocusDown="@id/switch1"
+        android:nextFocusLeft="@id/button3"
+        android:nextFocusRight="@id/button2"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +31,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_2"
+        android:nextFocusUp="@id/button2"
+        android:nextFocusDown="@id/switch1"
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button1"
@@ -34,13 +44,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_3"
+        android:nextFocusUp="@id/button3"
+        android:nextFocusDown="@id/switch1"
+        android:nextFocusRight="@id/button1"
+        android:nextFocusLeft="@id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="@+id/button2" />
 
     <ImageView
-        android:id="@+id/flag_view"
+        android:id="@+id/tv_banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -48,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button1"
         app:layout_constraintTop_toBottomOf="@+id/button1"
-        app:srcCompat="@drawable/flag" />
+        app:srcCompat="@drawable/tv_banner" />
 
     <Switch
         android:id="@+id/switch1"
@@ -56,9 +70,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:text="@string/Spin_flag"
-        app:layout_constraintBottom_toBottomOf="@+id/flag_view"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_banner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/flag_view"
+        app:layout_constraintTop_toTopOf="@+id/tv_banner"
         />
 
 
