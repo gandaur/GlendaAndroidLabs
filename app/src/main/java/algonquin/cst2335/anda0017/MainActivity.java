@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgView = findViewById(R.id.flag_view);
+        imgView = findViewById(R.id.tv_banner);
         sw = findViewById(R.id.switch1);
 
         sw.setOnCheckedChangeListener( (btn, isChecked) -> {
