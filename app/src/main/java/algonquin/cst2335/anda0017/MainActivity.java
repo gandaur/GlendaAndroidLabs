@@ -2,6 +2,7 @@ package algonquin.cst2335.anda0017;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -12,6 +13,7 @@ import android.widget.Switch;
 public class MainActivity extends AppCompatActivity {
 
     ImageView imgView;
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     Switch sw;
 
     @Override
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgView = findViewById(R.id.tv_banner);
+        imgView = findViewById(R.id.flag);
         sw = findViewById(R.id.switch1);
 
         sw.setOnCheckedChangeListener( (btn, isChecked) -> {
