@@ -3,4 +3,5 @@
     <string name="app_name">Glenda\'s Android Labs</string>
     <string name="hello_message">Hola Mundo!</string>
     <string name="button_message">Soy un boton</string>
+    <string name="enter_your_email_address">Entrar Email</string>
 </resources>
