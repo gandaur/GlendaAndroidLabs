@@ -70,7 +70,7 @@ public class SecondActivity extends AppCompatActivity {
 
                         {
                             Bitmap imageButton = BitmapFactory.decodeFile("/data/data/algonquin.cst2335.anda0017/files/Picture.png");
-                            profileImage.setImageBitmap( thumbnail);
+                            profileImage.setImageBitmap( imageButton);
                         }
                         try {
                             fOut = openFileOutput("Picture.png", Context.MODE_PRIVATE);

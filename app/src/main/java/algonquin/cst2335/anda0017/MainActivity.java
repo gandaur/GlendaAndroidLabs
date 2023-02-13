@@ -22,26 +22,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.w("MainActivity", "In onCreate() - Loading Widgets");
-        getSupportActionBar().hide();
+
 
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        SharedPreferences preferences= getSharedPreferences("MyData", Context.MODE_PRIVATE);
+
+        SharedPreferences prefs= getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
         Button loginButton = findViewById(R.id.login);
         EditText text = findViewById(R.id.editTextPassword);
         EditText emailtext= findViewById(R.id.emailText);
 
         binding.login.setOnClickListener(btn -> {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("EmailAddress", emailtext.getText().toString());
+            intent.putExtra("Age", 34);
+            intent.putExtra("Name","Glenda");
+            intent.putExtra("PostalCode", "J8X 3R9");
 
-            Intent nextPage = new Intent(MainActivity.this, SecondActivity.class);
-            Intent EmailAddress  = nextPage.putExtra("EmailAddress", emailtext.getText().toString());
-                nextPage.putExtra("Age", 34);
-                nextPage.putExtra("Name","Glenda");
-                nextPage.putExtra("PostalCode", "J8X 3R9");
 
-                //makes the transition, send the data to SecondActivity
-                startActivity(nextPage);
-            });
+            editor.putString("LoginName",emailtext.getText().toString());
+            editor.apply();
+
+            prefs.getString("VariableName","");
+            String emailAddress = prefs.getString("LoginName","");
+            emailtext.setText(emailAddress);
+            //makes the transition, send the data to SecondActivity
+            startActivity(intent);
+        });
 
 
     }
@@ -78,9 +86,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
 
         super.onDestroy();
-        Log.w(TAG, "Memory used by the application is garbaged");
+        Log.w(TAG, "Memory used by the application is garbage");
     }
 
 
-    }
-
+}
