@@ -38,6 +38,7 @@ public class SecondActivity extends AppCompatActivity {
         TextView email = findViewById(R.id.textView3);
         email.setText("Welcome Back " + emailAddress);
 
+
         Button phoneCall = (Button) findViewById(R.id.call);
         EditText phoneNumber = (EditText) findViewById(R.id.editTextNumber);
 
