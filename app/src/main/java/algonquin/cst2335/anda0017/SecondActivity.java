@@ -56,10 +56,14 @@ public class SecondActivity extends AppCompatActivity {
 
         ActivityResultLauncher<Intent> cameraResult = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
-                result -> {
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent data = result.getData();
                         Bitmap thumbnail = data.getParcelableExtra("data");
+                        profileImage.setImageBitmap(thumbnail);
 
 
                         FileOutputStream fOut = null;
@@ -69,8 +73,9 @@ public class SecondActivity extends AppCompatActivity {
                         if(file.exists())
 
                         {
-                            Bitmap imageButton = BitmapFactory.decodeFile("/data/data/algonquin.cst2335.anda0017/files/Picture.png");
-                            profileImage.setImageBitmap( imageButton);
+                            Bitmap theImage=
+                            BitmapFactory.decodeFile("/data/data/algonquin.cst2335.anda0017/files/Picture.png");
+                            profileImage.setImageBitmap( theImage);
                         }
                         try {
                             fOut = openFileOutput("Picture.png", Context.MODE_PRIVATE);
@@ -79,6 +84,7 @@ public class SecondActivity extends AppCompatActivity {
                             fOut.close();
                         } catch (IOException e) {
                             throw new RuntimeException(e);
+                        }
                         }
                     }
                 });
