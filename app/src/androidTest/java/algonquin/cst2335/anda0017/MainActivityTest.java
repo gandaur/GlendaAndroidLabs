@@ -46,7 +46,7 @@ public class MainActivityTest {
         materialButton.perform(click());
 
         ViewInteraction textView = onView (withId(R.id.password_message));
-        textView.check(matches(withText("You shall not pass")));
+        textView.check(matches(withText("You shall not pass!")));
 
 
     }
