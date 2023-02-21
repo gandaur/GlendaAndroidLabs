@@ -25,6 +25,7 @@ public class MainActivityTest {
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
+
     /**
      * testing if the textview is changing to "You shall not pass!"
      */
@@ -45,16 +46,19 @@ public class MainActivityTest {
         ViewInteraction materialButton = onView(withId(R.id.login_button));
         materialButton.perform(click());
 
-        ViewInteraction textView = onView (withId(R.id.password_message));
+        ViewInteraction textView = onView(withId(R.id.password_message));
         textView.check(matches(withText("You shall not pass")));
 
 
     }
+
     /**
      * testing if the textview is changing to "Your password is complex enough"
      */
     @Test
     public void mainActivityTest1() {
+
+
         ViewInteraction appCompatEditText = onView(withId(R.id.password_field));
         appCompatEditText.perform(replaceText("passWORD123#$*"), closeSoftKeyboard());
 
@@ -63,37 +67,37 @@ public class MainActivityTest {
 
         ViewInteraction textView = onView(withId(R.id.password_message));
         textView.check(matches(withText("Your password is complex enough")));
+
+
     }
+
     /**
      * Tests password with uppercase missing
      */
     @Test
     public void mainActivityTest2() {
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
 
-        ViewInteraction appCompatEditText = onView( withId(R.id.password_field));
+
+        ViewInteraction appCompatEditText = onView(withId(R.id.password_field));
         appCompatEditText.perform(replaceText("password123#$*"), closeSoftKeyboard());
 
         ViewInteraction materialButton = onView(withId(R.id.login_button));
         materialButton.perform(click());
 
         ViewInteraction textView = onView(withId(R.id.password_message));
-        textView.check(matches(withText("You shall not pass")));
+        textView.check(matches(withText("You shall not pass!")));
 
     }
+
     /**
      * Tests password with lowercase missing
      */
     @Test
     public void mainActivityTest3() {
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+
 
         //find the view s
-        ViewInteraction appCompatEditText = onView( withId(R.id.password_field) );
+        ViewInteraction appCompatEditText = onView(withId(R.id.password_field));
         //type in password123#$*
         appCompatEditText.perform(replaceText("PASSWORD123#$*"));
         //find the button
@@ -101,18 +105,19 @@ public class MainActivityTest {
         //Click the button
         materialButton.perform(click());
         //find the text view
-        ViewInteraction textView = onView( withId(R.id.password_message) );
+        ViewInteraction textView = onView(withId(R.id.password_message));
         //check the text
         textView.check(matches(withText("You shall not pass!")));
 
     }
+
     /**
      * testing if the app can recognise the absence of number
      */
     @Test
-    public void testFindMissingNumber() {
+    public void mainActivityTest4() {
         //find the view s
-        ViewInteraction appCompatEditText = onView( withId(R.id.password_field) );
+        ViewInteraction appCompatEditText = onView(withId(R.id.password_field));
         //type in password123#$*
         appCompatEditText.perform(replaceText("passWORD#%$"));
         //find the button
@@ -120,17 +125,18 @@ public class MainActivityTest {
         //Click the button
         materialButton.perform(click());
         //find the text view
-        ViewInteraction textView = onView( withId(R.id.password_message) );
+        ViewInteraction textView = onView(withId(R.id.password_message));
         //check the text
         textView.check(matches(withText("You shall not pass!")));
     }
+
     /**
-     * testing if the app can recognise the absence of upper case
+     * testing if the app can recognise the absence of special character
      */
     @Test
-    public void testFindMissingSpecialChar() {
+    public void mainActivityTest5() {
         //find the view s
-        ViewInteraction appCompatEditText = onView( withId(R.id.password_field) );
+        ViewInteraction appCompatEditText = onView(withId(R.id.password_field));
         //type in password123#$*
         appCompatEditText.perform(replaceText("passWORD123"));
         //find the button
@@ -138,9 +144,9 @@ public class MainActivityTest {
         //Click the button
         materialButton.perform(click());
         //find the text view
-        ViewInteraction textView = onView( withId(R.id.password_message) );
+        ViewInteraction textView = onView(withId(R.id.password_message));
         //check the text
         textView.check(matches(withText("You shall not pass!")));
     }
-
 }
+
