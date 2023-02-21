@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             String password = passwordField.getText().toString();
 
             if (checkPasswordComplexity( password )) {
-                passwordMessage.setText("Your password meets the requirements");
+                passwordMessage.setText("Your password is complex enough");
             } else {
-                passwordMessage.setText("You shall not pass");
+                passwordMessage.setText("You shall not pass!");
             }
         });
     }
