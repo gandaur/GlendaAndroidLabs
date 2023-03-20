@@ -60,7 +60,7 @@ public class ChatRoom extends AppCompatActivity {
                         .setPositiveButton("Yes", (dialog, cl) -> {
 
                             Snackbar.make(messageText, "You deleted message #" + position, Snackbar.LENGTH_LONG)
-                                    .setAction("Undo", clik ->{
+                                    .setAction("Undo", click ->{
                                         Executor thread = Executors.newSingleThreadExecutor();
                                         thread.execute(() -> {
                                             mDAO.insertMessage(m);
